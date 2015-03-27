@@ -1,0 +1,54 @@
+%%This is a very basic article template.
+%%There is just one section and two subsections.
+\documentclass{main}
+ 
+
+\usepackage{graphicx}      % include this line if your document contains figures
+\usepackage{natbib}        % required for bibliography
+\usepackage{subfigure}
+\usepackage{enumerate}
+
+
+\begin{document}
+
+\begin{frontmatter}
+
+\title{Metalização por Chama de Alta Velocidade (HVOF) de palhetas de turbinas
+hidráulicas: estudo do estado da arte
+\thanksref{footnoteinfo}} 
+
+\thanks[footnoteinfo]{This work is supported by ESBR under contract COPPETEC
+JIRAU 151/13 6631-0002/2013 (ANEL R\&D program).}
+
+\author[1]{Renan S. Freitas}
+\author[1]{Gabriel Alcantara C. S.}
+\author[1]{Eduardo Elael M. S.}
+\author[1]{Ramon R. Costa}
+\author[2]{Sylvain Joyeux}
+\author[2]{Patrick M. Paranhos}
+
+  \address[1]{Departamento de Engenharia Elétrica, COPPE UFRJ, Rio de Janeiro,
+  Brasil} 
+ %TODO
+  \address[2]{Centro de Inovação em Robótica (CIR), Rio de Janeiro, Brasil}
+ 
+\begin{abstract}                % Abstract of not more than 250 words.
+%TODO 
+\end{abstract} 
+
+\begin{keyword}
+%TODO
+\end{keyword}
+
+\end{frontmatter}
+
+\include{Introduction}
+\include{consideracoes}
+\include{SOTA}
+\include{Projetos}
+\include{Resultados}
+\include{Conclusion and Future work}
+  
+\bibliography{main} 
+\appendix
+\end{document}
