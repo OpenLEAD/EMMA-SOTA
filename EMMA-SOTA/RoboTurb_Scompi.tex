@@ -9,30 +9,13 @@
 %robos
 %vantagems/desvantagens
 
-Na indústria, a automatização de processos de \textit{hard coating},é
-normalmente realizada com a utilização de manipuladores robóticos. Esse tipo de
-robô proporciona uma versatilidade operações, uma vez que podem ser
-reprogramados para realizar tarefas repetidamente com alta precisão. O espaço de
-trabalho de um braço robótico é dependente do numero de juntas presentes no
-robô, rotacionais ou prismáticas, e pelo tamanho de cada elo. As juntas
-determinam os graus de liberdade e mobilidade que um manipulador possuí,
-enquanto o tamanho dos elos influenciária no alcane máximo do robô.
-
-Os processos de manunteção de turbinas, como o \textit{hard coating}, exigem a
-realização trajetórias complexas, o que siginifica a necessidade de várias
-juntas, e o tamanho das pás da turbina exigem que o manipulador tenha um alcance
-máximo pelo menos maior que a maior dimensão da pá. Portanto, os manipuladores
-robóticos utilizados para esse tipo de aplicação são, geralmente, robôs
-industrias que pesam centenas de quilos, com mais de 2 metros de alcance máximo
-e necessitam de uma fixação que garantam que o manipulador não irá se movimentar
-ao realizar suas tarefas programadas. 
-
-Para a automatização de um processo de manutenção \textit{in-situ} é
-necessário, porém, que o sistema projetado seja compacto, de fácil instalação, e
-que nâo exija alterações estruturais permanentes para a sua utilização. Um
-manipulador robótico convencional que necessite de um espaço de trabalho
-suficiente para executar tarafas em toda a superfície da pá de uma turbina se
-torna, então, inviável. 
+Na indústria, a automatização de processos de metalização,é
+normalmente realizada com a utilização de manipuladores robóticos, pois oferem a
+versatilidade de tarefas e espaço de trabalho possíveis necessários para esse
+tipo de aplicação. Entretanto, um sistema composto por um braço robótico capaz
+de operar em toda a extensão da superfície de uma pá de uma turbina hidrelétrica
+não é compacto nem móvel o suficiente para ser instalado e desinstalado para a
+operação de manuntenção \textit{in-situ}.
 
 Uma estratégia para reduzir o tamanho e peso de um manipulador robótico é
 torná-lo móvel. Isso pode ser alcançado com a introdução de mais uma junta
@@ -40,8 +23,61 @@ prismática acoplada a um trilho, possibilitando que o manipulador estenda seu
 espaço de trabalho por toda a extensão do trilho.
 
 Na literatura foram encontradas duas soluções para aplicações de manutenção e
-inspeção, como solda. As aplicações diferem principalmente na estratégia de
+inspeção, como solda. As aplicações diferem, principalmente, na estratégia de
 fixação do trilho. O Roboturb \cite{roboturb} realiza a fixação diretamente na
-pá do rotor, enquanto o robô Scompi \cite{scompi} utiliza uma fixação exterior 
+pá do rotor, enquanto o robô Scompi \cite{scompi} utiliza um trilho fixado em
+estruturas adjacentes à pá ou peça a ser reparada.
+
+O Roborturb consiste em um manipulador robótico com seis juntas de revolução e
+uma junta primsática acoplada a um trilho flexível, como pode ser observado
+na figura \ref{fig::roboturb}, utilizado para o preenchimento de cavidades
+geradas por cavitação.
+O trilho pode ser conformado e, então, fixado à superfície da pá por meio de um
+ sistema passivo de ventosas ou imãs.O robô tem 
+a possibilidade de utilizar dois efetuadores distintos, o primeiro consiste em 
+um sensor ótico para inspeção do estado de erosão da pá e o segundo consiste em
+uma ferramenta de solda do tipo tocha plasma PWH-4A com alimentador automático
+de arame, responsável pelo depósito de solda para o preenchimento das cavidades
+identificadas pelo sistema.
+
+\begin{figure}[!htb]
+	\centering
+    \begin{minipage}[b]{0.45\linewidth}	
+		\includegraphics[width=\columnwidth]{figs/trilhos/roboturbpaper}
+		\caption{Roboturb - Manipulador robótico sobre trilho flexível}
+		\label{fig::roboturb}
+	\end{minipage}
+	\begin{minipage}[b]{0.45\linewidth}
+		\includegraphics[width=\columnwidth]{figs/trilhos/scompi}
+		\caption{SCOMPI - Manipulador robótico sobre trilhos rígidos}
+		\label{fig::scompi}
+	\end{minipage}
+\end{figure}
+%TODO ajeitar figura
+
+Por sua vez, o robô Scompi, fig \ref{fig::scompi}, é um manipulador
+multipropósito projetado para realizar reparos em turbinas do tipo \textit{Francis}, como solda e
+esmerilhamento das pás. O sistema possuí seis graus de liberdade, sendo 
+consitituído por um braço robótico com cinco juntas derevolução e o último grau
+ de liberdade proveniente de uma junta prismática quepercorre um sistema de 
+ trilhos retos ou curvos. 
+
+
+Sistemas baseados em trilhos tem como maior benefício a redução do tamanho e,
+consequentemente, do peso do manipulador necessário para a execução de tarefas
+em um espaço de trabalho que englobe toda a superfície da pá a ser reparada.
+Essa redução proporciona facilidade de transporte do robô até o interior da
+turbina e também o projeto de manipuladores que tenham a rigidez necessária para
+a realização das tarefas desejadas, uma vez que manipuladores simples com
+rigidez e espaço de trabalho necessários seriam muito pesados. Entretanto,
+sistemas baseados em trilhos com fixação na própria pá do rotor, necessitam que
+o trilho seja movidos caso toda a superfície da pá necessite sofre manuntenção,
+uma vez que o a área em que o trilho está apoiado não pertence ao espaço de
+trabalho do robô. Em adição, sistemas com fixação de trilhos nas estruturas
+adjacentes à pá devem atentar as condições para a instalação dispostas pelo
+ambiente para equilibrar a relação de custo benefício entre facilidade de
+instalação e remoção do trilho e a robustez do mesmo, uma vez que sistemas
+permanentes dificilmente são possíveis no contexto das aplicações citadas.
+
 
 
