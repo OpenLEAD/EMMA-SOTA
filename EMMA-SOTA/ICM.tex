@@ -14,25 +14,142 @@ navios e palhetas de turbinas \cite{clawar}.
 
 Os grandes desafios nos projetos de sistemas escaladores são mobilidade e
 aderência, além de consumo de energia, capacidade de carga e peso. Em
-\cite{modular}, os robôs escaladores são divididos em seis tipos de locomoção:
-por pernas, como andador, deslizante, com rodas, por esteiras, e avanço
-pendurado por braços; e seis categorias de adesão: sucção ou pneumática,
-magnética, eletrostática, química, preensão, e híbrido. 
+\cite{modular}e \cite{climbsurv}, os robôs escaladores são divididos em tipos de locomoção:
+pernas, como andador, utilizando segmentos deslizantes, rodas, esteiras, avanço
+pendurado por braços, por cabos e biomimética; e categorias de adesão: sucção ou
+pneumática, magnética, eletrostática, química, preensão e híbrida.
 
-No caso específico deste estudo da arte, podem-se destacar os robôs escaladores
-com as seguintes aplicações (\cite{climbsurv}): 
+No caso específico deste estudo da arte, destacam-se os robôs escaladores com as
+seguintes aplicações:
 
 \begin{itemize}
   \item \emph{Construção de navios e turbinas}: RRX3 para soldagem
-  (\cite{rrx3}), \emph{Climbing Robot for Grit Blasting} para limpeza
-  (\cite{crgb}) e ICM Robot para inspeção \citep{icm};
-  \item \emph{Construção industrial}: ROMA II para inspeção \citep{roma} e
-  CROMSCI para inspeção \citep{CROMSCI};
- \item \emph{Planta nuclear}: Robug IIs para manutenção \citep{robug}; 
- \item \emph{Planta petroquímica}: ROBICEN para inspeção \citep{robicen} e
-  TRIPILLAR para inspeção \citep{tripillar}.  
+  \citep{rrx3}, \emph{Climbing Robot for Grit Blasting} para limpeza
+  \citep{crgb} e ICM Robot para inspeção \citep{icm};
+  \item \emph{Construção industrial}: ROMA II \citep{roma} e
+  CROMSCI \citep{CROMSCI}, ambos para inspeção; 
+ \item \emph{Planta petroquímica}: ROBICEN \citep{robicen} e
+  TRIPILLAR \citep{tripillar}, ambos para inspeção.  
 \end{itemize}
 
- Hydro Electric Dam in Virgina.
+O RRX3 é um robô para a soldagem de casco de navios. Possui adesão por
+preensão, locomoção transversal utilizando segmentos deslizantes e locomoção
+longitudinal por rodas. Possui um manipulador de 1.5 m com três juntas
+prismáticas e três juntas de revolução (3P3R) para a operação de soldagem. Suas
+principais vantagens e desvantagens em relação à aplicação HVOF são:
 
-que operam com instrumentos para soldagem e com grande capacidade de mobilidade: ROMA II, Robug II, Roboclimber, Robug IIs, RRX, REST 2,
+\textbf{Vantagens:}
+\begin{itemize}
+  \item Base com capacidade de carga 120 kg;
+  \item Manipulador com capacidade de carga 5 kg;
+  \item Manipulador de precisão milimétrica;
+  \item Robô robusto que trabalha com instrumento de alta temperatura (solda);
+\end{itemize}
+
+\textbf{Desvantagens:}
+\begin{itemize}
+  \item Locomoção restrita impede utilização em estruturas geométricas
+  complexas;
+  \item Manipulador não possui alcance suficiente para a aplicação fim;
+  \item Manipulador com efetuador de baixa velocidade;
+\end{itemize}
+
+O \emph{Climbing robot for Grit Blasting} é um robô para jateamento abrasivo em
+navios. O robô utiliza duas plataformas deslizantes com sistema de adesão por
+ímã magnético. Os módulos apresentam movimentação relativa entre si e pode rotar
+para compensar as curvaturas do casco do navio ou desviar de objetos. 
+
+\textbf{Vantagens:}
+\begin{itemize}
+  \item Base com capacidade de carga de sistema abrasivo semelhante ao HVOF;
+  \item Base com locomoção de precisão milimétrica;
+\end{itemize}
+
+\textbf{Desvantagens:}
+\begin{itemize}
+  \item Locomoção ampla, porém não aplicável às estruturas geométricas
+  complexas. A curvatura do casco é simples quando comparada à pá da turbina;
+  \item Não possui manipulador, logo o sistema deve percorrer todo o
+  casco;
+  \item A instalação de um manipulador prejudica a estabilidade do sistema;
+\end{itemize}
+
+\emph{The Climber}, ICM Robotics, é um robô para inspeção de turbinas eólicas,
+remoção de revestimento, limpeza de superfície, e aplicação de revestimento.
+Possui adesão pneumática (sucção) e locomoção por esteiras. 
+
+\textbf{Vantagens:}
+\begin{itemize}
+  \item Base com capacidade de carga de 25 kg;
+  \item Base com locomoção de precisão milimétrica;
+  \item Manipulador para revestimento HVOF pode ser acoplado à base; 
+\end{itemize}
+
+\textbf{Desvantagens:}
+\begin{itemize}
+  \item Manipulador com baixo alcance;
+  \item Manipulador com efetuador de baixa velocidade;;
+  \item Locomoção apresenta restrição a certas curvaturas devido às esteiras;
+\end{itemize}
+
+O ROMA II, Universidade Carlos II de Madrid, é um robô para inspeção de
+ambientes complexos. A sua tecnologia de adesão é pneumática (sucção) e
+locomove-se como uma lagarta (biomimética). Sua movimentação e planejamento de
+trajetória são realizados de maneira ótima de forma a garantir estabilidade e
+evitar obstáculos. 
+
+\textbf{Vantagens:}
+\begin{itemize}
+  \item Base com grande capacidade de carga;
+  \item Base com locomoção de grande precisão;
+  \item Movimenta-se em ambientes de grande complexidade geométrica; 
+\end{itemize}
+
+\textbf{Desvantagens:}
+\begin{itemize}
+  \item Não possui manipulador para aplicação HVOF;
+  \item A instalação de um manipulador irá desequilibrar o sistema,
+  principalmente durante a locomoção;
+\end{itemize}
+
+
+CROMSCI, Kaiserslautern University of Technology, é um robô autônomo para
+inspeção de grandes paredes de concreto, como pilares de pontes, barragens. Seu
+sistema de adesão é composto por sete câmaras de vácuo (sucção), com um sistema
+de controle por válvulas e sensores de pressão para reagir rapidamaente a
+condições adversas. Locomove-se com rodas omnidirecionais para locomoção.
+
+\textbf{Vantagens:}
+\begin{itemize}
+  \item Base com locomoção de precisão milimétrica; 
+\end{itemize}
+
+\textbf{Desvantagens:}
+\begin{itemize}
+  \item Manipulador com alcance de 80 cm;
+  \item Manipulador com efetuador de baixa velocidade;
+  \item Protótipo ainda com pouca capacidade de carga;
+\end{itemize}
+
+Planta petroquímica: ROBICEN
+
+TRIPILLAR, École polytechnique fédérale de Lausanne, é um robô escalador de
+pequeno porte (96 x 46 x 64 mm) desenvolvido para a inspeção de plantas
+petroquímicas. Utiliza um sistema como pernas de lagarta magnéticas em um
+formato triangular. Locomove-sepor esteiras.
+
+\textbf{Vantagens:}
+\begin{itemize}
+  \item Base com locomoção de precisão milimétrica;
+  \item Sistema robusto;
+  \item Controle simples;
+  \item Pequenas dimensões; 
+\end{itemize}
+
+\textbf{Desvantagens:}
+\begin{itemize}
+  \item Não foi testado em estruturas de grande complexidade geométrica; 
+  \item Não apresenta manipulador;
+  \item Protótipo ainda com pouca capacidade de carga;
+\end{itemize}
+   
