@@ -259,7 +259,8 @@
 \def\subsection{\@startsection{subsection}{2}{\z@}{0.3\@bls
   \@plus .2\@bls \@minus .1\@bls}{0.3\@bls}{\normalsize\itshape}}		% WAS \@bls and .3\@bls PMISRA 2007-05-30
 \def\subsubsection{\@startsection{subsubsection}{3}{\z@}{0.3\@bls
-  \@plus .1\@bls}{0.0001pt}{\normalsize\itshape}}			% WAS \@bls PMISRA 2007-05-30 
+  \@plus .1\@bls}{0.1\@bls}{\normalsize\itshape}}			% WAS \@bls PMISRA
+  % 2007-05-30
 \def\paragraph{\@startsection{paragraph}{4}{\z@}{3.25ex \@plus
   2ex \@minus 0.2ex}{-1em}{\normalfont\normalsize\itshape}}
 \def\subparagraph{\@startsection{subparagraph}{5}{1em}{3.25ex \@plus
