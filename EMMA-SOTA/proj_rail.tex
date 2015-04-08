@@ -7,9 +7,10 @@ satisfazer todos os requisitos, até agora observados, para a realização de um
 processo de inspeção e metalização utilizando a técnica HVOF. O desenvolvimento
 de um sistema compacto para o transporte através dos dutos de acesso e instalção
 no camara da turbina é possível, pois o tamanho necessário do manipulador pode
-ser reduzido com a mobilidade proporcionada pelo trilho. 
+ser reduzido por meio da mobilidade extra proporcionada pela introdução do
+trilho.
 
-Na contexto da aplicação proposta foi concebido duas possibilidades para a
+No contexto da aplicação proposta foram concebidas duas possibilidades para a
 fixação do sistema de trilhos. A primeira solução consiste em um sistema
 semelhante ao Roboturb, apresentado na seção \ref{sec::rail}. O sistema proposto
 se trata de um manipulador robótico, com fixação diretamente na própria pá da
@@ -22,21 +23,57 @@ O trilho deve ser flexível para ser capaz de acompanhar a curvatura da pá e
 possibilitar diversas opções de posicionamento. Imãs permanentes podem ser
 utilizados como solução de fixação. entrentanto \textbf{deve-se verificar a
 resistência do material da superfície da pá, pois dependendo da força magnética
-necessária para aguentar o peso do sistema é possível que o processo de
+necessária para aguentar o peso do sistema, é possível que o processo de
 acoplamento e retirada dos imãs danifique a superfície}. A utilização de
 ventosas passivas também pode ser adotada, porém devido a própria natureza desse
 sistema é necessário que se desenvolva um sistema de segurança para a detecção
 de uma possível perda de poder de sucção. Aceleromêtros podem ser empregados
 para verificar deslocamentos e desativar completamente o processo de
-metalização. Uma abordagem de segurança mais ativa pode consistir no estudo do
-emprego de ventosas ativas para eliminar a chance de que o robô caia.
+metalização. Uma abordagem de segurança menos passiva pode consistir no estudo
+do emprego de ventosas ativas e um sistema de controle para reduzi a chance do
+robô chegar a se desprender completamente das pás.
 
-Para a solução baseada na fixação diretamente na pá, é necessário, que
-\textbf{após o processo de metalização, seja possível a fixação em um ponto
-recém processado. Caso haja um tempo elevado de resfriamento ou fixação do
-material, essa solução se torna impossibilitada uma vez que para a total
-cobertura da superfície da pá é necessário que a posição do trilho seja alterada
-pelo menos uma vez.}
+\textbf{Caso seja necessária a automatização do processo de preparação e
+inspeção da pá}, o efetuador do manipulador deverá ter a possibilidade de troca 
+de ferramentas. O manipulador deve ser capaz de suportar o peso de todos os
+tipos de sistema e também capaz de seguir as trajetórias específicas para cada
+aplicação, assim como, manter a velocidade mínima necessária de cada uma delas.
+O tamanho do manipulador e o número mínimo de juntas está relacionado, então,
+com um estudo sobre \textbf{as especificações de cada processo a ser realizado
+pelo robô, ou seja, as forças relacionadas a cada processo, a complexidade das
+trajetórias e as restrições de movimentos impostas pelo método aplicado e,
+também, pelo ambiente.}
+
+Todovia, é necessário, para o sucesso da solução baseada em um sistema de
+fixação diretamente na pá, que \textbf{após o processo de metalização, seja 
+possível a fixação em um ponto recém processado. Caso haja um tempo elevado de resfriamento ou fixação do material,
+essa solução se torna impossibilitada uma vez que para a total cobertura da 
+superfície da pá é necessário que a posição do trilho seja alterada pelo menos 
+uma vez.} Outro fator importante de ser observado para essa solução é a
+obrigatoriedade da instalação e retirada manual para cada pá da turbina a ser
+processada, impossibilitando a manutenção de toda a turbina com uma única
+instalação.
+
+Existe uma alternativa, afim de se evitar o contato com pá e, também, a
+necessidade de fixação e remoção do robô para cada pá, que consiste em um único trilho
+retilíneo fixado no cone do rotor e nas paredes do anel de descarga. Esse tipo
+de abordagem simplifica a movimentação do robô no trilho, uma vez que o trilho
+seria totalmente reto e possibilitaria a manuntenção de todas as pás com uma
+única instalação, \textbf{já que a turbina pode ser rotacionada} de maneira que o robô
+esteja posicionado para processar a próxima pá. Entretanto, a movimentação do 
+cone influencia diretamente na maneira em que otrilho pode ser acoplado ao 
+mesmo. Se o cone girar juntamente com o rotor, umsistema móvel deverá ser 
+idealizado. A utilização de rodas, por exemplo,possibilataria que o cone 
+girasse sem alterar o posicionamento do trilho. 
+
+\textbf{A curvatura da pá e a distância máxima de sua superfície até a base do
+cone} são fatores que podem desfavorecer a escolha dessa solução, já que se o
+alcance do robô necessitar ser da mesma ordem de grandeza do comprimento máximo
+da pá, o desenvolvimento desse manipulador não teria vantagem sobre um
+manipulador robótico comum com uma base fixa no chão. \textbf{A possibilidade
+de girar a pá e extensão desse movimento} podem reduzir esse problema, colocando
+a superfície da pá o mais pararelo possível ao trilho.
+
 
 
  \begin{itemize}
@@ -45,15 +82,4 @@ pelo menos uma vez.}
  Gerais	
  Trilho na pá
   \item pensar metodo de instalação para partes altas da pá
-\end{itemize}
-
-Trilho preso à turbina
-\begin{itemize}
-  \item pensar método de fixação ao rotor e chão. Magnetico talvez, pressão,
-  trilho extensível.
-  \item nariz gira junto?
-  \item vantagem do trilho ser reto e movimento ser em 1D.
-  \item ponderar facilidade de instalacao
-  \item verificar qual o alcance que o manipulador deverá ter
-  
 \end{itemize}
