@@ -11,8 +11,13 @@
 \usepackage{graphicx}
 \usepackage{caption}
 \usepackage{subcaption}
-\usepackage[portuguese]{babel}
+\usepackage[portuguese]{babel} 
 \usepackage[none]{hyphenat}
+\usepackage{tikz}
+\usepackage{verbatim}
+\usepackage[active,tightpage]{preview} 
+\usetikzlibrary{trees}
+\usepackage{pdfpages}
 \sloppy
 
 \begin{document}
@@ -41,7 +46,7 @@ JIRAU 151/13 6631-0002/2013 (ANEL R\&D program).}
 \begin{abstract}                % Abstract of not more than 250 words.
 %TODO 
 \end{abstract} 
-
+ 
 \begin{keyword}
 %TODO
 \end{keyword}
@@ -49,10 +54,11 @@ JIRAU 151/13 6631-0002/2013 (ANEL R\&D program).}
 \end{frontmatter}
 
 \include{Introduction}
-\include{consideracoes}
+%\include{consideracoes}
 \include{SOTA}
 \include{Projetos}
 \include{questoes}
+\includepdf[pages=-]{articles/questoes.pdf}
 \include{conclusao}
   
 \bibliography{main} 
