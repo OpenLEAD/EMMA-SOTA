@@ -1,5 +1,3 @@
-%%This is a very basic article template.
-%%There is just one section and two subsections.
 \documentclass{main}
  
 
@@ -10,8 +8,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage{caption}
-\usepackage{subcaption}
-\usepackage[portuguese]{babel} 
+\usepackage[brazilian]{babel}
 \usepackage[none]{hyphenat}
 \usepackage{tikz}
 \usepackage{verbatim}
@@ -40,21 +37,23 @@ JIRAU 151/13 6631-0002/2013 (ANEL R\&D program).}
 
   \address[1]{Departamento de Engenharia Elétrica, COPPE UFRJ, Rio de Janeiro,
   Brasil} 
- %TODO
+  % TODO Renan: Verificar departamento do patrick e sylvain
   \address[2]{Centro de Inovação em Robótica (CIR), Rio de Janeiro, Brasil}
  
 \begin{abstract}                % Abstract of not more than 250 words.
-%TODO 
+%TODO Renan: Resumo
 \end{abstract} 
  
 \begin{keyword}
-%TODO
+%TODO Renan: Keywords
 \end{keyword}
 
 \end{frontmatter}
 
-\include{Introduction}
-%\include{consideracoes}
+\include{Introduction} 
+\include{consideracoes}
+\include{desc_hvof}
+\include{desc_contex}
 \include{SOTA}
 \include{Projetos}
 \include{questoes}
