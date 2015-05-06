@@ -1,73 +1,93 @@
 \subsection{Contextualização e tarefas do robô}
-%TODO Elael: Caso JIRAU, contextualização (Ambiente), acessos à turbina
-% (detalhar os acessor pela dimensão e etc) , tarefas do Robô e questoes
-% relacionadas
 
-A usina hidrelétrica de Jirau utiliza turbina do tipo bulbo, na qual um grande
-bulbo com um gerador elétrico é submerso e acoplado a uma hélice horizontal do
-tipo \textit{Kaplan}. Como a geração de energia depende da altura da queda
+A usina hidrelétrica de Jirau é do tipo fio d'água, na qual são utilizadas turbinas do tipo bulbo de eixo horizontal. Como a geração de energia depende da altura da queda
 d'água e da vazão do rio, as turbinas do tipo bulbo utilizam uma grande vazão de
-água para produzirem energia suficiente. A figura \ref{fig::bulb_turbine}
-ilustra uma turbina do tipo bulbo e o grandes dutos necessários para comportar o
+água para produzirem energia suficiente. A figura \ref{fig::bulb_turbine} e a Tabela \ref{tab::bulb_turbine}
+ilustram uma turbina do tipo bulbo e o grandes dutos necessários para comportar o
 grande volume de água que passa através da turbina. 
 
 \begin{figure}[h!]	
-	\includegraphics[width=\columnwidth]{figs/intro/bulb_turbine}
+	\includegraphics[width=\columnwidth]{figs/intro/bulb_turbine2}
 	\caption{Ilustração de uma turbina do tipo bulbo.}
 	\label{fig::bulb_turbine}
 \end{figure}
 
-Utilizando-se os processos de metalização atuais, processando as pás da hélice
-em um local exterior à turbina, é necessária a retirada de todo o aro câmara,
+\begin{table}[h!]
+\centering
+\begin{tabular}{  c | c  }
+  \hline
+  \textbf{Número} & \textbf{Componente} \\ \hline
+  1 & Nariz do bulbo \\ \hline
+  2 & Tubo de acesso ao gerador  \\ \hline
+  3 & Câmara de adução  \\ \hline
+  4 & Cabeçote Kaplan  \\ \hline
+  5 & Gerador Síncrono  \\ \hline
+  6 e 8 & Estrutura de sustentação \\ \hline
+  6 & Tubo de acesso à turbina \\ \hline
+  7 e 9 & Mancais Combinado e Guia \\ \hline
+  10 & Distribuidor \\ \hline
+  11 & Pás do Rotor \\ \hline
+  12 & Cone ou Ogiva \\ \hline
+  13 & Cubo \\ \hline
+  14 & Tubo de sucção/descarga \\
+  \hline
+\end{tabular}
+\caption{Componentes principais de uma turbina tipo bulbo}
+\label{tab::bulb_turbine}
+\end{table}
+
+Atualmente, caso seja necessário algum reparo ou inspeção na turbina, é necessário que se interrompa o fluxo de água e que toda a água em seu interior seja drenada. Para manutenção do rotor ou da face à jusante do distribuidor, existe uma escotilha de acesso de diâmetro limitado. Entretanto, caso deseje-se realizar a metalização das pás já instaladas,utilizando-se os processos atuais, é necessária a retirada de todo o aro câmara,
 desmontagem completa do rotor e logística de transporte das pás até o local
-desejado. Essa operação, caso necessite ser realizada, demandaria a mobilização
+onde a metalização será realizada. Essa operação, caso necessite ser realizada, demandaria a mobilização
 de diversas equipes de manutenção, operação de pórtico rolante e transporte,
 além de impossibilitar a utilização da turbina durante várias semanas.
-
-No contexto do projeto proposto, as partes de interesse da turbina são:
+No contexto do projeto proposto, as pontos de interesse da turbina são:
 
 \begin{itemize}
   \item Hélice e pás;
   \item Aro Câmara e regiões adjacentes;
   \item Escotilhas de acesso;
-  \item Duto de sáida;
+  \item Tubo de Sucção;
+  \item Infraestrutura disponível
 \end{itemize} 
 
 \subsubsection{Hélice e pás}
-\begin{itemize}
-  \item Provavelmente o perfil hidráulico da pá não será disponibilizado. Sensores são necessários para isso. Rijeza possui esses sensores. 
-  É propriedade intelectual. Mas tem meios para conseguir.
-  \item Parte superior só pela escotilha. Mas, primeiramente, ela não será
-  recuperada/revestida. 
-  \item Não há sobreposição das pás.
-  \item Varia 29 total (14.5 para cada lado). Melhor estar totalmente aberta, por ser, possivelmente, a posição 
-de melhor acesso.
-  \item  Pode ser girada, porém não é tão simples. Melhor realizar procedimento frente e verso para depois girar a 
-turbina. Minimizar o número de rotações.
-   \item Existe erosão e cavitação e esses fenômenos são influenciados pela
-variação de queda d'água. Estudos mostraram que com diferenças maiores de 12 metros, os problemas de cavitação são 
-minimizados.  Há cavitação em ambos os lados da pá devido a presença de fenômenos de alta e baixa pressão.
-\end{itemize}
+ 
+O rotor ou hélice da turbina é constituído, basicamente, do cubo, as pás e o cone. As pás do rotor são instaladas no cubo. Nas turbinas da usina de Jirau, cada pá mede, aproximadamente, 2,5m de altura e 3m de largura. 
+
+A agulação de cada pá em relação ao fluxo d'água pode ser alterado em 29$^o$, 14,5$^o$ para cada lado a partir da posição inicial, não havendo sobreposição entre as pás. Essa angulação pode ser explorada para otimizar o espaço de trabalho necessário para o processamento da pá. Essa angulação também influencia o acesso a região entre o distribuidor e o rotor, uma vez que não existe acesso pela montante da turbina. A posição do rotor também pode ser manualmente alterada, possibilitando que o mesmo seja girado em ambas as direções e sem limite de revoluções. Entretanto, essa operação é uma tarefa complicada e envolve um certo risco às pessoas que a realizam. Sendo assim, a solução proposta deve otimizar o número de rotações necessárias para o processamento de todas as pás.
+
+Na usina de Jirau, foram verificados a presença do fenômenos de abrasão e cavitação. O primeiro é causado principalmente pelo grande número de partículas e detritos presentes no Rio Madeira. Por sua vez, o fenômeno de cavitação é tem sua presença intensificada, segundo estudos realizados na própria usina, para quedas com mais de 12 metros de diferença. Foi observado também danos em ambos os lados da pá, ou seja, em Jirau há presença de cavitação por fenômenos de alta e baixa pressão. 
+
+A manutenção dos danos causados, assim como a metalização preventiva, é diferenciada para abrasão e cavitação. O processo de metalização utiliza diferentes ligas para cada tipo de fenômeno e é imporante que não haja concomitância de ambos os processos em alguma região da pá. O desgaste de material devido a cavitação deve ser compensado por meio da deposição de material utilizando-se solda. O processo de metalização não é capaz de depositar a quantidade de material necessária e também não possui a precisão necessária para preencher somente as regiões afetadas. 
+
+A deposição de solda nos orifícios causados pela cavitação deve ser feito de maneira controlada para que não haja alteração do perfil hidráulico da pá. Entretanto, o modelo exato do perfil da pá não é fornecido pelo fabricante e deverá ser construído em uma pá modelo para que seja possível a reparação desses danos.
+
+%TODO Gabriel: citar "lip/leap"
 
 \subsubsection{Aro Câmara e regiões adjacentes}
-\begin{itemize}
-  \item superfícies metalicas
-  \item Aro câmara é plano porém estreito
-  \item Altura até o miolo do rotor de aprox 2,5m
-  \item Região a montante do aro camara deve ser acessada passando-se pelo aro
-  camara e helice
-  \item Região a montante do aro camara inclinada, presença do distribuidor
-  \item Regiao a jusante do aro camara também inclinada
-\end{itemize}
 
+O aro câmara, assim como o a região próxima ao distribuidor e também o tubo de sucção são superfícies metálicas. Essa característica possibilita a exploração de soluções de fixação magnética. 
+
+Somente a região compreendida pelo aro câmara é plana e tendo como agravante a presença do distribuidor na região à montante ao rotor. É necessário que a inclinação presente nessas superfícies seja contabilizada e uma solução eficiente de apoio ou plano elevado seja desenvolvida caso haja necessidade de fixação de alguma parte do sistema. Atualmente todo o trabalho é realizado por meio da montagem de andaimes ancorados por cordas.
+ 
 \subsubsection{Escotilhas de acesso}
-\begin{itemize}
-  \item Inferior - acesso humano e equipamentos
-    \item Menor escotilha de acesso da usina tem 80 cm
-  	\item Escotilhas de acesso em posições diferentes dependendo da margem
-  \item Superior - visualização do Lip da pá.
-  \item Superior localiza-se no aro camara. 
-\end{itemize}
+O acesso à turbina se dá por duas escotilhas, uma inferior, localizada no ínicio do tubo de sucção próxima ao aro câmara e outra superior, localizada na parte superior do aro câmara.
+
+A escotilha inferior é o acesso utilizado para a entrada de pessoas na turbina e, atualmente, todo material utilizado para reparos é transportado através dessa escotilha. Na usina de Jirau existem dois tipos de escotilha de acesso inferior, sendo a menor delas possuindo 80cm de diâmetro. 
+
+A escotilha superior é utilizada, principalmente, para a inspeção visual do estado do Lip. %TODO corrigir Lip/leap
+O diâmetro do acesso superior é de aproximadamente 45cm, limitando as dimensões dos equipamentos que podem ser transportados através da escotilha. 
+
+\subsubsection{Tubo de sucção}
+
+O tubo de sucção é relevante ao contexto dessa proposta pois caracteriza uma possibilidade de acesso. Ao final do tubo de descarga está localizado o vão dos stoplogs de jusante ou da comporta vagão e, em seguida, o leito do rio. Caso os stoplogs não estejam inseridos, existe um vão de acesso de pelo menos 10m de largura. O fluxo de água pode ser controlado pela abertura do distribuidor, criando assim um acesso extra para um sistema submarino.
+
+\subsubsection Infraestrutura disponível
+É importante ressaltar a infraestrutura dísponível para o desenvolvimento da solução. Após seca a turbina, é possível a disponibilização de energia elétrica e ar comprimo em seu interior, ambos importantes para o processo de metalização. Outro fator importante é a presença de um pórtico rolante que tem acesso até o andar diretamente inferior ao aro câmara, posicionando todo o equipamento necessário nas proximidades da escotilha de acesso inferior. É possível também o acesso direto, por meio de pórtico, à escotilha superior.
+
+
+
 
 
 
