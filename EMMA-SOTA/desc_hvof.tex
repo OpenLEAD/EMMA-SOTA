@@ -23,20 +23,20 @@ médio do processo é de 6 horas por lado da pá.
 Primeiramente, a pá é preparada por jateamento com óxido de alumínio. O HVOF
 consiste em alimentar, numa câmara de combustão, o material de revestimento
 (carboneto de tungstênio) e uma mistura gasosa do combustível (propano) e
-oxigênio. De acordo com os dados fornecidos pela empresa Rijeza, a pistola
-projeta uma chama de $3000^oC$, que pulveriza as partículas com velocidade de
-700 a 1000 m/s, recuo de 15 N força, e não há tempo de cura para o processo. A
-massa da pistola é 7 kg, a distância de aplicação varia entre 230 a 240 mm, e
-ângulo de $30^0$ a $90^0$, em relação à superfície.
+oxigênio. De acordo com os dados fornecidos pela empresa Rijeza, a pistola de 8
+Kg projeta uma chama de $3000^oC$, que pulveriza as partículas com velocidade de
+700 a 1000 m/s, gerando uma força de recuo de 15 N.
 
-O manipulador robótico deve mover a pistola HVOF em uma velocidade constante de
-40 m/s, não pode estar fixa em uma posição da pá por muito tempo (parada), pois
-há acúmulo de material, deformando a superfície. Trocas de direção ou sentido
-na movimentação do manipulador são considerados como parada, logo as trocas
-deverão ser realizadas em áreas exteriores à superfície da pá ou chapas de
-sacrifício são utilizadas. As informações do processo podem ser observadas na
-figura~\ref{fig::hvof}.
-
+O manipulador robótico deve possuir precisão de 5 mm, a pistola no
+efetuador deve permanecer a uma distância que varia entre 230 e 240 mm, e ângulo
+de $30^0$ a $90^0$, em relação à superfície. O manipulador deve ser capaz
+de mover a pistola a velocidade constante de 40 m/s, e não pode estar
+fixa em uma posição da pá por muito tempo (parada), pois há acúmulo de
+material, deformando a superfície. Trocas de direção ou sentido na movimentação
+do manipulador são considerados como parada, logo as trocas deverão ser
+realizadas em áreas exteriores à superfície da pá ou chapas de sacrifício são
+utilizadas. As informações do processo podem ser observadas na figura~\ref{fig::hvof}.
+ 
 \begin{figure}[h!]	
 	\includegraphics[width=\columnwidth]{figs/intro/hvof.pdf}
 	\caption{Foto do efetuador do manipulador e pistola HVOF.}
@@ -56,7 +56,9 @@ sistema é imediato por corte de gás, porém, em caso de falta de energia, o
 manipulador será desligado, mas a chama não se apagará.
 
 A qualidade do revestimento é geralmente avaliada por um instrumento que
-realiza a medida de porosidade, oxidação, dureza e rugosidade da superfície.
+realiza a medida de porosidade, oxidação, dureza e rugosidade da superfície. O
+processo é realizado manualmente, de maneira rápida e fácil, por um operador e
+pontos específicos da pá são analisados.
 
 %Sistemas robóticos não devem utilizar magnetismo como meio de aderência, já que
 %o aço inox 420 não apresenta alta permeabilidade magnética e a alta temperatura
