@@ -75,6 +75,98 @@ base de apoio e um manipulador com alcance para o processmento de uma face da p�
 posicionado de frente para pá, ou um manipulador posicionado entre duas pás com
 alcance de para processar as duas as faces das pás voltadas para ele.
 
+\subsubsection{Dimensionamento da base}
+
+Para manipuladores com longo alcance, as forças e torques envolvidos requerem
+uma estrutura de fixação do robô de forma que o sistema como um todo não se
+movimente e, no caso extremo, tombe. Normalmente, os manipuladores robóticos são
+fixados no chão e as características da superfície e dos parafusos são
+estipulados pelo fornecedor a partir dos valores máximos de torque e força que o
+manipulador exerce em sua base. Para uma base apoiada no chão, dois fatores
+influenciam capacidade de estabilização da estrutura: o raio da base e o seu
+peso.
+
+O raio da base $r_{b_f}$ é limitado pelo ambiente da turbina e para cada
+posicionamento existem restrições específicas. 
+Para a realização dos cálculos de dimensionamento foi considerado,
+primeiramente, o manipulador posicionado em frente a pá e processando somente uma face por vez
+e a uma altura de 1000mm, posição em que o alcance necessário do robô é de
+1800mm. Para essas características, o tamanho máximo que a base pode assumir é
+de aproximadamente 1600mm, caso a estrutura seja projetada de forma a seguir os contornos do aro câmara.
+A figura \ref{fig::base_aro_frente} %TODO figura base_aro_frente
+representa um esboço da vista frontal do aro câmara e a largura máxima que a
+base pode assumir. A análise da dimensão máxima da base no sentido paralelo ao
+fluxo da água pode ser realizada com o auxílio do desenho técnico fornecido pela
+ESBR, ilustrado na figura \ref{fig::turbine_side}. O limite superior nessa
+região é determinado pela transição do aro câmara para a região inclinada do
+tubo de sucção e é de aproximadamente 1600mm. Entrentanto esse limite pode ser
+contornado construindo-se um plano horizontal ou projetando-se a base de forma que ela acompanhe essa
+inclinação. Ao se incluir o dimensionamento da base no cálculo do alcance mínimo
+do manipulador deve ser realizado uma alteraçao, uma vez que agora o manipulador
+se encontra deslocado da superfície da pá. Sendo assim, alcance mínimo se
+relaciona com o tamanho do raio da base de acordo com
+$$a_{min}=\sqrt{r_b^2+1800^2}.$$
+
+O cálculo das dimensões da base com o robô posicionado dentro do aro câmara e
+entre as pás depende do angulo de ataque das pás e do cálculo do ângulo diédrico
+entre elas. A amplitude do movimento de rotação $alpha$ das pás é de $14,5^o$
+para cada lado a partir da posição zero, entretanto \textbf{essa posição não pôde ser
+informada no momento da viagem de reconhecimento e ainda não foi
+disponibilizada}. Para critério de cálculos foi utilizado um ângulo de
+$45^o$ como a posição de maior abertura das pás e o zero foi considerado como
+a reta perpendicular ao fluxo de água. O ângulo diédrico $\theta$ entre as pás depende da rotação
+sofrida pelas mesmas e obedece a relação $\cos{\theta} = \sin^2{\alpha}.$
+
+O arco de circunferência pode ser obtido a partir da relação $arc=R*\alpha$ com
+R=3850mm. O raio máximo da base pode ser calculada como 
+$$r_{b_e} = (R - h_{b_e})\tan{\theta/2},$$  ilustrado na figura
+\ref{fig:calc_base_entre} e com $h_{b_e}$ sendo a altura da base.
+
+O peso mínimo que a base do robô deve possuir está diretamente relacionada com o
+tamanho de seu raio. A firgura \ref{fig::tilt_robot} faz uma representação
+simplificada da forma que o torque de capotamento máximo atua no robô e em sua
+base. Na situação limite, considerando o torque com sentido horário, a força
+normal entre a base e a superfície de apoio $N_2$ teria módulo igual a zero.
+Considerando o pior caso, ou seja, a força vertical que o robô exerce na base é
+composta apenas pelo seu peso $W$ para que a base não se mova durante a
+operação, temos que o somatório das forças e torques sejam iguais a zero.
+
+A análise das forças nos fornece que $N_1$ tenha módulo igual ao peso do robô e
+o somatório dos torques se reduz a $M_k-Wr_b=0$. Sendo assim, a relação entre
+o raio da base, seu peso e o torque máximo de capotamento exercido pelo robô é
+da forma 
+
+$$M_k=Wr_b.$$
+
+%TODO refazer figura
+\begin{figure}[h!]
+\centering
+	\includegraphics[width=0.5\columnwidth]{figs/base/tilt}
+	\caption{Forças e torques máximos entre o robô e sua base.}
+\end{figure}
+
+Uma vez que a superfície do aro câmara e a região adjacente no tubo de sucção
+são \textbf{ferromagnéticas}, é possível a utilização de bases magnéticas para
+uma compensação do peso e raio necessário para a estabilização do robô. Os
+dispositivos magnéticos se dispõem de duas maneiras para essa aplicação:
+eletretromagnéticos e imãs permanentes. O primeiro caso tem como principal
+vantagem a possibilidade de acionamento remoto, entretanto para situações de
+falha em que haja perda de fornecimento de energia a força de atração também é
+perdida. O segundo caso consiste em imãs permanentes arrumados de maneira que
+seja possível organizar o fluxo magnético e, assim, controlar por meio de uma
+alavanca a presença ou ausência de força magnética. A figura
+\ref{figs/base/imas} ilustra os dois tipos de bases magnéticas citados.
+Comercialmente, foram encontrados bases magnéticas com capacidade de até 3000N.
+
+%TODO figura imãs
+
+
+
+
+
+
+
+
 
 
 
