@@ -4,8 +4,8 @@
 % posicionamento das pás e cálculos do tamanho mínimo do manipulador
 
 Essa escotilha localizada no topo do aro câmara possui uma abertura de apenas
-35cm de diâmetro, o que cria um desafio quando se pensa em utiliza-la como ponto
-de acesso para um robô. Por outro lado sua proximidade às pás e a área livre fora do aro
+35 cm de diâmetro, o que cria um desafio quando se pensa em utiliza-la como
+ponto de acesso para um robô. Por outro lado sua proximidade às pás e a área livre fora do aro
 câmara criam possibilidades interessantes para seu uso.
 
 \textbf{Vantagens}
@@ -17,55 +17,54 @@ câmara criam possibilidades interessantes para seu uso.
 
 \textbf{Desvantagens}
 \begin{itemize}
-  \item Dificuldade de encontrar robôs de tal dimensão (35cm diâmetro)
+  \item Dificuldade de encontrar robôs de tal dimensão (35 cm diâmetro)
   \item Necessidade de retirar e inserir o robô quando rodar as pás
   \item Solução focada na UHE Jirau
 \end{itemize}
 
-A escolha do robô está primariamente associada ao seu alcance, e o alcance, por
-sua vez, a posição do robô com relação à pá. Por outro lado, apenas uma pequena
-parcela dos robôs comerciais possuem a dimensão necessária para atravessar a
-escotilha. Sendo assim, o estudo foi direcionada para o uso do KUKA Light Weight
-(LBR iiwa 14 R820), robô cuja diagonal da base é inferior aos 35 cm da
-escotilha.
+A solução mais simples para este acessso é a utilização de um robô industrial
+comercial. A escolha está primariamente associada ao alcance do robô, e o
+alcance, por sua vez, à posição do robô com relação à pá. Por outro lado, apenas
+uma pequena parcela dos robôs comerciais possuem a dimensão necessária para
+atravessar a escotilha. Sendo assim, o estudo foi direcionada para o uso do
+KUKA Light Weight (LBR iiwa 14 R820), robô cuja diagonal da base é inferior aos
+35 cm da escotilha.
 
-O LBR R820 pesa 30kg, possui 7 eixos e suporta um \textit{payload} de 14kg,
+O LBR R820 pesa 30 kg, possui 7 eixos e suporta um \textit{payload} de 14kg,
 suficiente por uma pequena margem para carregar o equipamento de
-\textit{coating}. Entretanto, é necessário um estudo aprofundado para valida-lo
-quanto aos requisitos de velocidade e precisão quando percorrendo a trajetória
-de \textit{coating}.
+revestimento. Entretanto, são necessários estudos aprofundados para valida-lo,
+como os requisitos de velocidade e precisão quando percorrendo a trajetória
+para a realização do revestimento.
 
 Tendo como objetivo posicionar o LBR R820 em uma posição onde seja capaz de
-trabalhar sobre toda a pá, um modelo de base articulada foi proposto. A base
-composta de dois elos interligados por uma junta de rotação é fixada sobre a
+trabalhar toda a pá, um modelo de base articulada foi proposto. A base
+composta de dois elos interligados por uma junta de rotação é fixada na
 própria escotilha de um lado, o que lhe dá um ponto de referência e fixação, e
 do outro possui o braço robótico. Para que seja possível cobrir toda a pá,
-a base deve ser inserida em possivelmente diversas angulações com respeito ao
-eixo de inserção, tendo o intúito de alterar o eixo de rotação da junta que
-conecta os dois segmentos da base. Essa junta também precisa ser sua posição
-alterada, o que pode ser realizado manualmente, sem a necessidade de um motor
-para atua-la.
+a base deve ser inserida em diversas angulações com respeito ao
+eixo de inserção, do forma que seja possível alterar o eixo de rotação da junta
+que conecta os dois segmentos da base. Essa junta também precisa ter sua posição
+alterada, o que pode ser realizado manualmente ou com atuador.
 
-Intrudizir o robô, composto pelo conjunto base-LBR R820, é uma tarefa cuidadosa
+Introduzir o robô, composto pelo conjunto base-LBR R820, é uma tarefa cuidadosa
 pois a extensão total será maior que a distância do topo do aro câmara ao
-\emph{nose} da turbina. Ou seja, o braço e a base precisarão ser rotacionados
+cone da turbina. Ou seja, o braço e a base precisarão ser rotacionados
 durante o processo de inserção, o que acarretará no desalinhamento do centro de
-massa (com relação ao eixo perpendicular a escotilha) e exigirá uma guia para
+massa (com relação ao eixo perpendicular à escotilha) e exigirá uma guia para
 resistir ao torque gerado por esse desalinhamento.
 
 Com o robô fixado na escotilha e a junta da base travada, são esperados torques
-inferiores a 3000Nm sobre a junta e 4000Nm sobre a base, durante a operação de
-coating com o robô. Apesar de tido como valor máximo, os torques, para
-definições do tamanho do braço longe dos valores extremos, devem estar em torno
-de metade desse limite.
+inferiores a 3000 Nm sobre a junta e 4000 Nm sobre a base, durante a operação de
+revestimento.
 
-Ao se avaliar as possibilidades de realizar o coating sem a necessidade de
-placas de sacrifício, percebe-se que isso poderá ser realizado com a junta da
-base paralela à pá (que para efeito de cálculo foi assumida com uma angulação de 
-$45^o$ com relação ao eixo da turbina). Para esse caso a junta precisa realizar
+Ao se avaliar as possibilidades de realizar o revestimento sem a necessidade de
+placas de sacrifício, percebe-se que poderá ser realizado se a junta da
+base estiver paralela à pá (que para efeito de cálculo foi assumida com uma
+angulação de $45^o$ com relação ao eixo da turbina). Para esse caso a junta precisa realizar
 uma rotação à velcidade mínima de 34 rad/min. Essa velocidade possibilita a
-pistola de coating percorrer verticalmente a pá sem pausa. Percorrer
-horizontalmente a pá é impossível pelas restrições nas dimensções da base. Para
-determinar essas condições, foram utilizadas as informações reais de extenção da
-pá e área de trabalho do robô, entretanto foi desprezada a curvatura da pá.
+pistola de revestimento percorrer verticalmente a pá sem pausa. Percorrer
+horizontalmente a pá não será possível devido às restrições nas dimensções da
+base. O cálculo foi realizado por um estudo puramente geométrico, utilizando as
+informações reais de extensão da pá e área de trabalho do robô, assumindo um
+modelo simples da pá, sem curvatura.
 
