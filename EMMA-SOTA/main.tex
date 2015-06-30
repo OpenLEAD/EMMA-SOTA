@@ -11,6 +11,17 @@
 \setlength{\captionmargin}{30pt}
 \usepackage[brazilian]{babel}
 \usepackage[none]{hyphenat} 
+\usepackage{subcaption} 
+\usepackage{capt-of}
+\usepackage{kpfonts} 
+\usepackage{stackengine}
+\usepackage{calc}
+\newlength\shlength
+\newcommand\xshlongvec[2][0]{\setlength\shlength{#1pt}%
+  \stackengine{-5.6pt}{$#2$}{\smash{$\kern\shlength%
+    \stackengine{7.55pt}{$\mathchar"017E$}%
+      {\rule{\widthof{$#2$}}{.57pt}\kern.4pt}{O}{r}{F}{F}{L}\kern-\shlength$}}%
+      {O}{c}{F}{T}{S}}
 \sloppy  
 
 \begin{document}
@@ -27,6 +38,7 @@ JIRAU 151/13 6631-0002/2013 (ANEL R\&D program).}
 \author[1]{Renan S. Freitas}
 \author[1]{Gabriel Alcantara C. S.}
 \author[1]{Eduardo Elael M. S.}
+\author[1]{Estevão Fróes}
 \author[1]{Ramon R. Costa}
 \author[2]{Sylvain Joyeux}
 \author[2]{Patrick M. Paranhos}
