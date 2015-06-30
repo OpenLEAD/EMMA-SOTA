@@ -71,3 +71,62 @@ metalização é de 8,5kg.
 	\caption{Manipulador industrial modelo Kuka-KR30l16 no ambiente de simulação.}
 	\label{fig::kukakr30l16_openrave}
 \end{figure}
+
+A especificação do alcance máximo do robô provê apenas a informação do ponto
+mais distante de sua base que o manipulador consegue alcançar. Para a descrição
+geométrica do espaço de trabalho, é necessário observar cada junta de revolução
+ou prismática do robô e, também o tamanho dos elos. A partir dessas informações
+é possível gerar um envelope que englobe todo o espaço em que é possível que o
+manipulador se posicione. Entretanto, para o contexto da metalização, no qual a
+tarefa a ser realizada impõe restrições de posição, orientação e velocidade, é
+necessário analisar também a manipulabilidade do manipulador em cada posição.
+Utilizando-se o ambiente de simulção do \textit{OpenRAVE} é possível gerar,
+numericamente, uma representação visual em 3 dimensões do espaço de trabalho e
+também do graus de liberdade em cada ponto do epaço. Esse estudo possibilita,
+rapidamente, um entendimento básico do comportamento do robô dentro de seu
+espaço de trabalho e também proporciona uma maior capacidade de discernimento do
+posicionamento da base do robô para que a seja possível um melhor aproveitamento
+do manipulador. A figura \ref{fig::workspace_openrave} ilustra o espaço de
+trabalho do manipulador \textit{Kuka KR 30l16}, na qual o robô se
+encontra no centro da esfera e cada ponto em que o manipulador consegue
+alcançar é representado por uma cor, sendo que quanto mais vermelhor mais graus
+de liberdade o efetuador possuí naquela posição.
+
+\begin{figure}[h!]
+\centering
+	\includegraphics[width=\columnwidth]{figs/openrave/workspace_kr30l16_openrave}
+	\caption{Representação do espaço de trabalho do Manipulador industrial
+	modelo Kuka-KR30l16.}
+	\label{fig::workspace_openrave}
+\end{figure}
+
+Uma vez que o ambiente de simulação foi configurado, é possível testar diversos
+cenários com os diferentes manipuladores já modelados. Essa característica
+proporciona uma análise superficial e validação de conceitos e, também, o teste
+de posicionamento de manipuladores com detecção de colisôes. A figura
+\ref{fig::position_test_openrave} ilustra a validação de posicionamento do
+manipulador \textit{Kuka KR 30} para um ponto extremo da pá. 
+
+\begin{figure}[h!]
+\centering
+	\includegraphics[width=\columnwidth]{figs/openrave/position_test_openrave}
+	\caption{Representação do espaço de trabalho do Manipulador industrial
+	modelo Kuka-KR30l16.}
+	\label{fig::workspace_openrave}
+\end{figure}
+
+Após uma primeira análise verificou-se uma dificuldade de posicionamento do
+modelo \textit{Kuka KR 30} de maneira que fosse possível a metalização completa
+de uma face da pá do rotor sem a necessidade de movimentação da base. Por outro
+lado, a utilização de uma manipulador de grande porte, como o \textit{Kuka KR
+30l16}, torna-se muito complexa para o processamento das faces voltadas para a
+Jusante, pois o espaço confinado entre as pás dificulta a movimentação do
+manipulador. \textbf{O referencial zero para o ângulo das pás não foi
+fornecido e foi utilizado o ângulo de $45^o$ em relação a linha perpendicular ao
+fluxo d'água como posição de maior arbertura}. Com as informações geradas até o
+momento, não é possível descartar a viabilidade técnica de nenhuma das soluções
+e um estudo mais detalhado do posicionamento ótimo .a base do manipulador deverá
+ser realizado, afim de se obter o menor número de movimentações para um
+manipulador de médio porte e, também, a verificação de uma posição viável para o
+processamento completo da parte à Jusante da pá utilizando-se um manipulador de
+grande porte.
