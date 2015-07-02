@@ -1,83 +1,57 @@
 \subsection{Descrição das tarefas do robô}
 %TODO Elael: Tarefas do Robô
-
-Em linhas gerais, o robô a ser desenvolvido deve ser capaz de realizar a tarefa
-de revestimento tal qual seria feita caso a pá não estivesse instalada na
-tubina. Porém, além das dificuldades relacionadas ao acesso e à geometria da
-região de trabalho dentro da unidade geradora, as pás podem conter danos
-causados pela erosão e cavitação que devem ser corrigidos antes do processo de
-revestimento.
-
-Toda a pá, antes de ser submetida ao processo de revestimento, deve estar
-em conformidade com o gabarito, perfil hidráulico de uma pá
+Esta subseção descreve as tarefas básicas do robô para o revestimento de
+turbinas \textit{in situ}. Em linhas gerais, o robô a ser desenvolvido deve ser
+capaz de realizar a tarefa de revestimento tal qual seria feita caso a pá não estivesse instalada na
+tubina e de uma maneira autônoma. A pá, antes de ser submetida ao
+processo de revestimento, deve estar em conformidade com o gabarito, perfil hidráulico de uma pá
 intacta. Portanto, uma tarefa do robô é realizar o mapeamento do perfil
-hidráulico e construi um modelo 3D.
+hidráulico, construir um modelo 3D e analisar imperfeições.
 
-Na usina de Jirau, as pás sofrem erosão e cavitação, onde esses fenômenos são
-influenciados pela variação de queda d'água. Estudos mostraram que com
-diferenças maiores de 12 metros, os problemas de cavitação são minimizados,
-porém a hidrelétrica está frequentemente em operação abaixo desse nível.
-Dessa forma, há danos em ambos os lados da pá devido a presença de fenômenos de
-alta e baixa pressão. Essas deformações precisam ser removidas manualmente ou de
-forma automatizada, possivelmente por soldagem, mas é necessária a inspeção e
-análise de cavitação para realizar de forma automática o reparo. O
-\textit{hardcoating} vem como forma de prevenir o dano causa por tais fenômenos,
-porém este também sofre desgaste. Fortuitamente, indetificar o dano sofrido pelo
-revestimento é simples e rápido. A espessura do \textit{coating} é medida em um
-número finito de pontos sobre a superfície da pá, no total, leva-se em torno de
-10 minutos por pá. E essa tarefa não será realizado pelo robô.
+Em caso de deformações, causados por cavitação e abrasão, estas precisam
+ser removidas manualmente ou de forma automatizada, possivelmente por
+soldagem, a qual pode pode ser uma tarefa do robô. A tarefa de soldagem pode
+ser realizada por operador, manualmente, por não possuir todas as restrições
+da tarefa de revestimento (velocidade, precisão, carga e etc), porém o ambiente
+pode dificultar a operação de forma que a execução por um robô seja
+indispensável. 
 
-Após as pás estarem de acordo com o gabarito, ainda há necessidade de fazer
-remoção e jateamento para deixar a superfície rugosa e aumentar a aderência do
-revestimento (composto de óxido de alumínio). Esta tarefa não precisa ser
-realizada pelo robô, existe a possibilidade de montar um andaime. Como ambos os
-lados da pá são revestidos. O jateamento e preparação devem ser realizados em
-ambos os lados da pá, porém cone da turbina não recebe esse tratamento. Em
-teoria, pode-se aplicar \textit{hardcoating} sem retirar o último revestimento,
-porém não é o recomendado. Segue-se o exemplo de empresas de aviação, onde
-existe a prática de retirar todo o revestimento antigo antes de aplicar o novo.
+Após as pás estarem de acordo com o gabarito, faz-se a
+identificação do desgaste do revestimento, medindo sua espessura em um
+número finito de pontos sobre a superfície da pá. Manualmente esse
+processo é realizado eficientemente em 10 min, justificando a não necessidade de
+esta ser uma tarefa do robô. Porém, em caso de necessidade de aplicação
+de novo revestimento, é necessária a remoção do revestimento antigo por
+jateamento, a fim de deixar a superfície rugosa e aumentar sua aderência. A
+tarefa de jateamento pode ser realizada pelo robô, ou manualmente
+com ajuda de andaimes internos ao ambiente do aro câmara. Como ambos os lados da pá são revestidos, o
+jateamento deve ser realizado em ambos os lados. Vale ressaltar que, em teoria,
+pode-se aplicar revestimento por metalização sem retirar o último revestimento, porém não é o
+recomendado.
+%Segue-se o exemplo de empresas de aviação, onde existe a
+%prática de retirar todo o revestimento antigo antes de aplicar o novo.
 
-O robô desenhado para fazer o coating precisa ser capaz de manter sua precisão
-de movimento enquanto resiste a forção imposta pelo empuxo de saída do gás e do
-material da pistola de metalização. Tal força, exercida na direção contrária da
-direção de aplicação, não há estimativa. Cálculo é necessário ou experimento em
-célula de carga para definir qual a grandeza desta. O robô precisa de capaz de
-imprimir sobre a pistola uma trajetória que não envolva troca de direções sobre
-a pá, pois a chama não pode permanecer na pá por muito tempo, caso contrário
-ocorre acúmulo de material sobre o ponto. Troca de direção ou sentido na
-movimentação do manipulador é considerado como parada. Logo, as trocas deverão
-ser realizadas em áreas exteriores à superfície da pá. Entretanto, \emph{Chapas de
-Sacrifício} podem ser colocadas para o processamento de pequenas áreas da pá. Que
-são apenas chapas metálicas colocadas como entreposto para evitar que o material
-seja depositado em determinada região, coberta pela chapa. Existe um mecanismo
-semelhante, conhecido por Fitas de Sacrifício, porém, apesar de teoricamente
-mais prático, não são eficientes ainda.
+Por fim, o robô deverá aplicar o revestimento como
+forma de prevenir o dano causado pelos fenômenos abrasivos. O robô projetado
+para fazer o revestimento precisa preencher todos os requisitos discutidos na
+subseção~\ref{sec::desc_hvof} e ser adaptável ao ambiente, cujos os requisitos
+são discutidos na subseção~\ref{sec::desc_contex}.
 
-Espessura do \textit{hardcoating} está relacionada à velocidade e quantidade de vezes que
-a pistola passa. O que torna esse um processo naturalmente demorado. O tempo
-médio atual de processamento é de aproximadamente um dia por superfície da pá,
-levando seis horas em cada face. Tendo então o robô que ser projetado para
-funcionar continuamente sob as condições ambientais locais, ou ter paradas
-planejadas, em ambos os casos a londa duração da tarefa precisa ser levada em
-consideração. O \textit{hardcoating} é um processo não apenas dispendioso em
-tempo, como também é material. Todo o material injetado tem perda de 40\%, e
-esse material perdido se dispersa sobre o ambiente como um pó de uma
-granularidade diminuta. Esse pó impõe ao robô mais uma restrição, pois ele deve
-ser selado como medida para evitar danos ao sistema. 
-
-Das tarefas a serem relizadas, são destacas as seguintes.
-Tarefas necessárias, porém que não precisam ser exercidas pelo robô:
+Das tarefas a serem relizadas, são destacadas as seguintes:
+Tarefas que podem ser executadas manualmente:
 \begin{itemize}
-  \item Modelar perfil hidráulico da pá, contruir gabarito.
-  \item Inspeção e análise de cavitação.
+  \item Inspeção e análise de danos na pá, tanto para reparo quanto para
+  revestimento.
+  \item Reparo.
+  \item Montagem do sistema.
   \item Jateamento da superfície.
 \end{itemize}
 
-Tarefas, ou restrições, que serão executadas pelo robô:
+Tarefas que poderão ser executadas pelo robô:
 \begin{itemize}
-  \item Estabilizar a pistola.
-  \item Realizar trajeto com a pistola sem troca de direção ou sentido sobre a
-  pá.
-  \item Levar em conta a longa duração da tarefa.
-  \item Ser selado ao excesso de pó gerado pelo processo de \textit{coating}.
+  \item Modelar o perfil hidráulico.
+  \item Calibração.
+  \item Jateamento.
+  \item Reparo (soldagem e esmerilhamento).
+  \item Revestimento por metalização.
 \end{itemize}
