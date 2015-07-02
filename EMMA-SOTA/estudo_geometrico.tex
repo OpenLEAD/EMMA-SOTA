@@ -24,22 +24,6 @@ azul.
 	\label{pa}
 \end{figure}
 
-Utilizando notação vetorial, temos: $\overrightarrow{P_1} = (0,-R,0)$. Considere
-$$\overrightarrow{{P_2}} = R_z(-(\beta/2 + \alpha))
-\overrightarrow{P_1}$$ e $$\overrightarrow{{P_3}} = R_z(-\alpha))
-\overrightarrow{P_1}$$ , onde $R_z$ é rotação em  torno de $Z$. Considere agora
-o vetor $$\overrightarrow{d} =
-R_{\overrightarrow{\overline{P_3}}}(-\omega)R_z(-\beta/2 -
-\alpha)\overrightarrow{P_1}$$, onde $R_{\overrightarrow{\overline{P_3}}}$ é rotação em torno do vetor unitário
-na direção de $\overrightarrow{P_3}$ e $\omega$ é o ângulo de rotação da pá em
-seu próprio eixo (valor que pode variar de $0$ a $28^o$).
-Dessa forma, busca-se o $$min (\left \| \overrightarrow{d} - \overrightarrow{M} 
-\right \|) =\left \| R_{\overrightarrow{\overline{P_3}}}(-\omega)R_z(-\beta/2 -
-\alpha)\overrightarrow{P} - \overrightarrow{M} \right \|$$, onde
-$\overrightarrow{M}=(0,-x,0)$ é a localização da base do manipulador. Dessa
-forma, obtemos a menor distância entre base e o extremo da pá para $\omega,
-x, \alpha$. Consequentemente, pode-se inferir o alcance mínimo do manipulador.
-
 Pode-se posicionar a base do manipulador em diferentes valores de $\alpha$, que é
 o mesmo que girar a turbina e alterar a posição da pá. Para $\alpha = 0$, por
 exemplo, o manipulador se encontra em frente à pá, e para $\alpha = \pi/4$ ele está entre as pás.
@@ -102,6 +86,56 @@ circular em vermelho.
 	\caption{Estudo geométrico do manipulador industrial Kuka 820 na escotilha
 	superior e base de dois elos.}
 	\label{pakuka}
+\end{figure}
+
+Utilizando notação vetorial, considere: 
+$$\overrightarrow{Z}=(0,0,1)$$
+$$\overrightarrow{X}=(1,0,0) $$
+$$\overrightarrow{Y}=(0,1,0)$$
+$$\overrightarrow{P_0} = (0,R,0)$$
+$$\overrightarrow{P_c}=(0,R-x,0)$$
+$$\overrightarrow{\widetilde{P}} = R_z(-\alpha) \overrightarrow{P_0}$$
+$$\overrightarrow{\overline{\widetilde{P}}}=\frac{\overrightarrow{\widetilde{P}}}{\left \| \overrightarrow{\widetilde{P}} \right \|}$$
+$$\overrightarrow{P_R} =R_{\overrightarrow{\overline{\widetilde{P}}}}(\omega)R_z(-(\alpha+\beta/2)P_0$$
+$$\overrightarrow{v}=R_{\overrightarrow{\overline{\widetilde{P}}}}(\omega)R_z(\beta/2)R_z(-\alpha)\overrightarrow{Y}$$
+$$\overrightarrow{P_a} =R_{\overrightarrow{\overline{\widetilde{P}}}}(\omega)\overrightarrow{Z}$$
+$$P_{r} = P_R\frac{r}{R}+\overrightarrow{P_a}*0.23$$
+$$P_R =P_R+0.23 $$
+
+onde $\overrightarrow{P_0}$ é o vetor do centro do cone ao acesso superior,
+$\overrightarrow{P_c}$ é o vetor do centro do cone ao fim do primeiro elo da
+base i, $\overrightarrow{\widetilde{P}}$ é o vetor do centro do cone da turbina
+ao aro câmara que passa pelo centro da pá,
+$\overrightarrow{\overline{\widetilde{P}}}$ é o vetor unitário correspondente a
+$\overrightarrow{\widetilde{P}}$, $\overrightarrow{P_R}$ é o vetor do centro do cone da turbina
+ao extremo superior da pá, $\overrightarrow{v}$ é um vetor unitário no plano da
+pá e no extremo superior, $\overrightarrow{P_r}$ é o vetor do centro do cone da
+turbina ao extremo inferior da pá ,$\overrightarrow{P_a}$ é um vetor unitário
+normal à pá, $R_z$ é rotação em torno de $\overrightarrow{Z}$, $\omega$ é o
+ângulo de rotação da pá em seu próprio eixo (valor que pode variar de $0$ a
+$45^o$), $x$ é o comprimento do elo i e $y$ é o comprimento do elo j.
+
+O projeto consiste em encontrar o valor de $y$ (comprimento do segundo elo da
+base) para diferentes valores de $x$ (elo i). O elo possui uma junta
+prismática, portanto, $y$ assume valores mínimos para alcançar o extremo
+inferior da pá, e máximos para alcançar o extremo superior da pá.
+Utilizando as dimensões do Kuka LBR, resolve-se a equação: 
+$$y = max (\left \|
+\overrightarrow{P_R}-\overrightarrow{P_c} \right \|, \left \|
+\overrightarrow{P_r}-\overrightarrow{P_c} \right \|) - 1.18$$ 
+Com ajuda
+computacional e percorrendo todos os valores de  $\alpha$ e $x$, obtém-se o
+gráfico~\ref{yminsmallhatch}. Em vermelho, temos o comprimento máximo do elo e,
+em azul, o comprimento mínimo, recolhido, do elo com junta prismática. Observe
+que para valores de $\alpha$ menores que 13.86 graus não há solução viável e,
+para valores entre 14 e 40 graus o elo estendido é maior que o dobro do elo
+reduzido, o que dificulta a solução também.
+
+\begin{figure}[h!]
+\centering
+	\includegraphics[width=\columnwidth]{figs/estudo/geometrico/yminsmallhatch.png} 
+	\caption{Estudo do comprimento mínimo e máximo para o segundo elo da base.}
+	\label{yminsmallhatch}
 \end{figure}
 
 A análise puramente geométrica não considera o formato real curvilíneo da pá e
