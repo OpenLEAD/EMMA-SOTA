@@ -255,17 +255,16 @@
 \def\partmark#1{}
 \def\section{\@startsection{section}{1}{\z@}{0.5\@bls
    \@plus .2\@bls \@minus .1\@bls}{0.5\@bls}{\normalsize\bfseries
- \boldmath}}								% WAS 1.8\@bls PMISRA 2007-05-30
+ \boldmath}}							% WAS 1.8\@bls PMISRA 2007-05-30
 \def\subsection{\@startsection{subsection}{2}{\z@}{0.3\@bls
-  \@plus .2\@bls \@minus .1\@bls}{0.3\@bls}{\normalsize\itshape}}		% WAS \@bls and .3\@bls PMISRA 2007-05-30
+  \@plus .2\@bls \@minus .1\@bls}{0.3\@bls}{\normalsize\itshape}}
 \def\subsubsection{\@startsection{subsubsection}{3}{\z@}{0.3\@bls
-  \@plus .1\@bls}{0.1\@bls}{\normalsize\itshape}}			% WAS \@bls PMISRA
-  % 2007-05-30
+  \@plus .2\@bls \@minus .1\@bls}{0.3\@bls}{\normalsize\itshape}}			
 \def\paragraph{\@startsection{paragraph}{4}{\z@}{3.25ex \@plus
   2ex \@minus 0.2ex}{-1em}{\normalfont\normalsize\itshape}}
 \def\subparagraph{\@startsection{subparagraph}{5}{1em}{3.25ex \@plus
   2ex \@minus 0.2ex}{-1em}{\normalfont\normalsize\itshape}}
-\setcounter{secnumdepth}{4}
+\setcounter{secnumdepth}{5}
 \def\half@em{\hskip 0.5em}
 \def\lb@part{PART \thepart.\half@em}
   \def\lb@empty@part{PART \thepart}
@@ -276,10 +275,10 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % The point of this change is to make tertiary section numbers go away.
-%\def\lb@subsubsection{\thesubsubsection.\half@em}
-%  \def\lb@empty@subsubsection{\thesubsubsection}
-\def\lb@subsubsection{}
-  \def\lb@empty@subsubsection{}
+\def\lb@subsubsection{\thesubsubsection.\half@em}
+ \def\lb@empty@subsubsection{\thesubsubsection}
+%\def\lb@subsubsection{}
+ % \def\lb@empty@subsubsection{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \def\lb@paragraph{\theparagraph.\half@em}
