@@ -32,11 +32,84 @@ foram referentes ao diboreto de zircônio \citep{diborides}.
 Foram desenvolvidos dois conceitos similares para resolver o problema, o \textit{Shutter
 Borboleta} e o \textit{Shutter Padrão}, descritos a seguir.
 
-\subsubsection{Shutter Borboleta}
+\subsubsection{\textit{Shutter} Borboleta}
 
 Esse primeiro conceito é constituido de um disco disposto antre a chama e a
 superfície. O disco possui duas aberturas opostas de $90^o$, por onde a chama da
 pistola travessa, e as outras duas regiões de $90^o$ compostas pelo material que
-servirá de anteparo para a chama a fim de evitar o coating da superfície. 
+servirá de anteparo para a chama, a fim de evitar o coating da superfície, que
+dão o nome ``borboleta'' ao design.
+O disco é suportado por um eixo que é rotacionado por um motor afixionado sobre o
+corpo da pistola de metalização (figuras \ref{fig::borboleta_aberta} e
+\ref{fig::borboleta_fechada}).
+
+\begin{figure}[h!]
+\centering
+	\includegraphics[width=\columnwidth]{figs/estudo/shutter/Shutter_Borboleta_Aberto}
+	\caption{\textit{Shutter} Borboleta em posição aberta, permitindo a passagem da chama
+	de coating.}
+	\label{fig::borboleta_aberta}
+\end{figure}
+
+Quando uma das regiões de abertura do \textit{shutter} se encontra na direção da
+chama (figura \ref{fig::borboleta_aberta}), esta o atravessa e atinge a
+superfície a ser tratada sem sofrer desvios. Quando for realizar uma mudança de
+direção ou parada por qualquer motivo, o motor gira o conjunto eixo/disco e
+posiciona a região de proteção na direção da chama, o que impede a passagem da
+chama (figura \ref{fig::borboleta_fechada}).
+
+\begin{figure}[h!]
+\centering
+	\includegraphics[width=\columnwidth]{figs/estudo/shutter/Shutter_Borboleta_Fechado}
+	\caption{\textit{Shutter} Borboleta em posição fechada, evitando a passagem da chama
+	de coating, agindo como anteparo de forma similar à chapa de sacrifício.}
+	\label{fig::borboleta_fechada}
+\end{figure}
+
+Para dimensionamento do eixo e da borboleta foram considerados os seguintes
+parâmetros:
+
+\[\rho = 15 g/mL\]
+\[v_{close} = 40 m/min\]
+\[d_{flame} = 33mm\]
+\[L = 20mm\]
+
+Onde $\rho$ é a densidade do do material do \textit{shutter}, $v_{close}$ a
+velocidade de fechamento sobre a chama, $d_{flame}$ o diâmetro da chama e $L$ o
+comprimento do eixo. Além desses parâmetros, foram utilizadas informações
+mecânicas como módulos de elasticidade e limites de escoamentos típicos de aço.
+
+Para a escolha do comprimento do eixo, o objetivo foi posicionar o
+\textit{shutter} a meio caminho da pistola à superfície, e mantendo $10cm$ de
+distância entre a posição do motor e a saída da chama (a fim de evitar
+exposição ao calor intenso). Durante o dimensionamento do shutter foi
+considerado um valor de segurança para o diâmetro da chama como o dobro do
+diâmetro real.
+
+A partir desses dados chegamos aos seguintes requisitos para o sistema:
+
+\[ r = 80 mm\]
+\[ \epsilon = 5 mm\]
+\[ \omega = 160 rpm\]
+\[ {Pot}_{min} = 5 W \]
+\[ \tau_{min} = 420 mNm \]
+\[ Pot_{\tau} = 7 W \]
+\[ d_{eixo} = 7 mm\]
+
+Onde $r$ é o raio do \textit{shutter}, $\epsilon$ sua espessura, o que acarreta
+um peso de $750g$ para o \textit{shutter}.
+
+$\omega$ é a velocidade de rotação que o motor precisa alcançar, $Pot_{min}$ sua potência
+mínima e $\tau_{min}$ seu torque mínimo necessário. $Pot_{\tau}$ é a potência
+mínima necessária caso o torque mínimo ($\tau_{min}$) for para ser mantido
+durante todo o percurso de fechar/abrir a passagem da chama. E, por fim,
+$\d_{eixo}$ é o diâmetro necessário do eixo para suportar a pressão da chama. 
+
+Foram pesquisados motores industriais de pequenas dimensões (menos de 300g),
+porém não foram encontrados motores capazes de suprir o torque necessário. Como
+são facilmente encontrados motores que satisfazem as restrições de potência,
+existem redutores de dimensões diminutas que podem ser acoplados ao motor para
+fazê-lo trabalhar na faixa de torque necessária.
+
 
 \subsubsection{Shutter Padrão}
