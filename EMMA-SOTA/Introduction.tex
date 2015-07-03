@@ -3,6 +3,57 @@
 O Brasil é um dos países mais ricos do mundo em recursos hídricos, logo a
 energia hidráulica é a mais dominante em todo o país. É o segundo país
 com maior consumo de energia elétrica no mundo, e tem capacidade instalada de
-70.000 MW com 433 usinas hidrelétricas em
-operação \citep{goldemberg2007energia}. Estima-se que cerca de 190.000 MW do
-potencial ainda não é utilizado, principalmente na região da Amazônia.
+70.000 MW com 433 usinas hidrelétricas em operação. Estima-se que o potencial para reforma e
+melhoria das grandes usinas construídas é de 32.000 MW
+\citep{goldemberg2007energia}, número que pode ser alcançado, em grande parte,
+pela manutenção das turbinas geradoras da energia elétrica. As turbinas estão
+constantemente expostas aos fenômenos de abrasão e cavitação, os quais
+determinam sua vida útil.
+
+O fenômeno de cavitação está muito bem estudado e detalhado em
+\cite{escaler2006detection}, onde são apresentadas seus tipo, ocorrências e os
+efeitos nas diferentes turbinas. Esse fenômeno físico pode causar erosões na
+máquina hidráulica, gerando instabilidade de fluxo de água, vibrações excessivas
+e redução da eficiência da turbina, como pode ser observado na
+figura~\ref{fig::cavitacao}.
+
+\begin{figure}[h!]	
+	\includegraphics[width=\columnwidth]{figs/intro/cavitacao}
+	\caption{Ilustração de uma pá de turbina que sofreu erosão por cavitação.}
+	\label{fig::cavitacao}
+\end{figure}
+
+A fim de reduzir o desgaste da pá contra cavitação ou abrasão e aumentar a sua
+vida útil, utiliza-se a técnica de revestimento por asperção térmica, que pode ser comparada com uma
+tinta que protege o material à exposição com o ambiente. O procedimento é realizado
+antes da instalação das pás na turbina, e exige alta precisão e velocidade, além
+de expelir substâncias nocivas à saúde, de forma que deve ser realizado
+autonomamente por um robô. Apesar de suficiente para a proteção da pá, o
+revestimento também tem vida útil e precisa ser refeito de tempos em tempos para
+garantir a proteção da pá contra os fenômenos físicos.
+
+No caso específico da usina hidrelétrica de Jirau, construída no rio Madeira,
+os fenômenos de abrasão são intensos devido ao grande número
+de párticulas que o rio carrega diariamente, reduzindo ainda mais a vida útil do revestimento.
+Portanto, há a necessidade de manutenção regular, o que, na situação atual,
+exige paralização da máquina, desmontagem da turbina, posicionamento de cada pá
+na área designada ao revestimento, aplicação do revestimento, montagem da
+turbina e recalibração da turbina. O tempo de paralização para a realização de
+toda a manutenção pode levar de um a dois meses, significando uma grande perda
+na geração de energia.
+
+A primeira etapa do projeto EMMA, pesquisa e desenvolvimento
+realizados pela Fundação COPPETEC, em parceria com a empresa Rijeza, ANEEL e
+ESBR, é um estudo de viabilidade técnica de um sistema robótico para realizar
+revestimento por aspersão térmica de turbinas \textit{in situ}, ou seja, dentro
+do ambiente da turbina, o aro câmara. O projeto tem como objetivo reduzir
+significativamente o tempo de manutenção do revestimento por ser realizado no
+ambiente confinado da turbina e, portanto, não havendo necessidade de sua
+desmontagem.
+
+Este documento está dividido da seguinte forma: a seção 2 descreve
+detalhadamente o problema, contextualiza o leitor no ambiente da usina de
+Jirau e descreve as possíveis tarefas do robô; a seção 3 faz um levantamento do
+estado da arte; a seção 4 descreve os projetos conceituais para o robô; a seção
+5 faz um estudo de viabilidade técnica, analisando os projetos conceituais; e a
+seção 5 conclui e descreve os próximos passos para o projeto EMMA. 
