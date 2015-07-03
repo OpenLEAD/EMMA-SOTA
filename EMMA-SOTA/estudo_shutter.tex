@@ -33,6 +33,7 @@ Foram desenvolvidos dois conceitos similares para resolver o problema, o \textit
 Borboleta} e o \textit{Shutter Padrão}, descritos a seguir.
 
 \subsubsection{\textit{Shutter} Borboleta}
+\label{borboleta}
 
 Esse primeiro conceito é constituido de um disco disposto antre a chama e a
 superfície. O disco possui duas aberturas opostas de $90^o$, por onde a chama da
@@ -53,9 +54,9 @@ corpo da pistola de metalização (figuras \ref{fig::borboleta_aberta} e
 
 Quando uma das regiões de abertura do \textit{shutter} se encontra na direção da
 chama (figura \ref{fig::borboleta_aberta}), esta o atravessa e atinge a
-superfície a ser tratada sem sofrer desvios. Quando for realizar uma mudança de
-direção ou parada por qualquer motivo, o motor gira o conjunto eixo/disco e
-posiciona a região de proteção na direção da chama, o que impede a passagem da
+superfície a ser tratada sem sofrer desvios. Para realizar uma mudança de
+direção do \textit{coating} ou parada por qualquer motivo, o motor gira o conjunto
+eixo/disco e posiciona a região de proteção na direção da chama, o que impede a passagem da
 chama (figura \ref{fig::borboleta_fechada}).
 
 \begin{figure}[h!]
@@ -99,11 +100,12 @@ A partir desses dados chegamos aos seguintes requisitos para o sistema:
 Onde $r$ é o raio do \textit{shutter}, $\epsilon$ sua espessura, o que acarreta
 um peso de $750g$ para o \textit{shutter}.
 
-$\omega$ é a velocidade de rotação que o motor precisa alcançar, $Pot_{min}$ sua potência
-mínima e $\tau_{min}$ seu torque mínimo necessário. $Pot_{\tau}$ é a potência
-mínima necessária caso o torque mínimo ($\tau_{min}$) for para ser mantido
-durante todo o percurso de fechar/abrir a passagem da chama. E, por fim,
-$\d_{eixo}$ é o diâmetro necessário do eixo para suportar a pressão da chama. 
+Há, também, $\omega$ que é a velocidade de rotação que o motor precisa alcançar,
+$Pot_{min}$ sua potência mínima e $\tau_{min}$ seu torque mínimo necessário.
+$Pot_{\tau}$ é a potência mínima necessária caso o torque mínimo ($\tau_{min}$)
+for para ser mantido durante todo o percurso de fechar/abrir a passagem da
+chama. E, por fim, $\d_{eixo}$ é o diâmetro necessário do eixo para suportar a
+pressão da chama.
 
 Foram pesquisados motores industriais de pequenas dimensões (menos de 300g),
 porém não foram encontrados motores capazes de suprir o torque necessário. Como
@@ -113,3 +115,58 @@ fazê-lo trabalhar na faixa de torque necessária.
 
 
 \subsubsection{Shutter Padrão}
+
+O \textit{Shutter} Padrão é composto por uma pequena chapa quadrada que é
+posicionada entre a pistola e a superfície pela atuação de um motor. O motor é
+conectado à chapa por quatro astes presas em suas extermidades, como mostram as
+figuras \ref{fig::padrao_aberto} e \ref{fig::padrao_fechado}.
+
+\begin{figure}[h!]
+\centering
+	\includegraphics[width=\columnwidth]{figs/estudo/shutter/Padrao_aberto}
+	\caption{\textit{Shutter} Padrão em posição aberta, permitindo a passagem da chama
+	de coating.}
+	\label{fig::padrao_aberto}
+\end{figure}
+
+Quando a chapa se encontra fora do eixo da chama dizemos que
+o \textit{shutter} está aberto (figura \ref{fig::padrao_aberto}), permitindo que o \textit{coating}
+seja realizado normalmente. Na necessidade de impedir a passagem da chama, o
+motor atua sobre as astes guiando a chapa para servir de anteparo à chama, é a
+posição fechada (figura \ref{fig::padrao_fechado}).
+
+\begin{figure}[h!]
+\centering
+	\includegraphics[width=\columnwidth]{figs/estudo/shutter/Padrao_fechado}
+	\caption{\textit{Shutter} Padrão em posição fechada, evitando a passagem da
+	chama de coating, agindo como anteparo de forma similar à chapa de sacrifício.}
+	\label{fig::padrao_fechado}
+\end{figure}
+
+Para calcular os requistos do motor e da chapa foram considerados os mesmos
+valores utilizados no \textit{shutter} borboleta (\ref{borboleta}). Sendo a
+escolha do comprimento do eixo e o diâmetro de segurança da chama feitos
+seguindo os mesmo preceitos também lá descritos.
+
+A partir desses dados chegamos aos seguintes requisitos para o sistema:
+
+\[ l = 66 mm\]
+\[ \epsilon = 5 mm\]
+\[ \omega = 32 rpm\]
+\[ {Pot}_{min} = 2 W \]
+\[ \tau_{min} = 920 mNm \]
+\[ Pot_{\tau} = 3 W \]
+
+
+Onde $l$ é o lado da chapa do \textit{shutter}, $\epsilon$ sua espessura, o que
+acarreta um peso de $350g$ para o \textit{shutter}.
+
+A velocidade de rotação que o motor precisa alcançar foi nomeada $\omega$, sua
+potência mínima $Pot_{min}$  e seu torque mínimo necessário $\tau_{min}$.
+$Pot_{\tau}$ é a potência mínima necessária para que o torque mínimo
+($\tau_{min}$) consiga ser mantido durante todo o percurso de fechar/abrir.
+
+Assim como para o \textit{shutter} borboleta não foram encontrados motores
+capazes de suprir o torque necessário. E a solução pelo uso de redutores de
+dimensões diminutas pode ser facilmente aplicada devido à baixa potência
+requerida.
