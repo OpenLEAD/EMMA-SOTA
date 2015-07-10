@@ -1,0 +1,67 @@
+\subsection{Estudo de sensores 3D disponíveis}
+
+O processo de metalização utilizado atualmente considera que a posição e
+orientação da pá é fixa em relação ao robô e, uma vez, que corretamente
+posiciona, o processo é executado em malha aberta. Entretanto, para qualquer uma
+das soluções propostas por esse documento, não é possível assumir que a pose
+do manipulador em relação a pá a ser processada se mantém fixa, tanto em posição,
+ quanto em orientação.
+
+Para um correto planejamento de trajetória que o manipulador deve seguir durante
+a tarefa de metalização, é importante o conhecimento da transformada entre o
+sistema de coordenada do manipulador e da pá a ser processada. Portanto, é
+necessário a utilização de algum sistema que possibilite a aquisição de dados
+que fornecam informações a respeito do ambiente e a posição relativa entre o
+manipulador e as pás.
+
+A utilização de um sensor de aquisição de dados espaciais não se limita somente
+a localização das partes constituintes do processo e, dependendo do sistema a
+ser escolhido, pode também ser útil na reconstrução do modelo do perfil
+hidráulico da pá, o perfil ideal e o estado atual da pá a ser processada.
+
+Esta seção irá apresentar os segmentos de sensores capazes de suprir essa
+necessidade, assim como suas vantagens e limitações. 
+
+
+\subsubsection{3D scanners}
+
+3D scanners são equipamentos de alta precisação utilizados na indústria
+geralmente em aplicações de metrologia, construção civil, monitoramento de
+deformações, entre outras. O equipamento consiste em um feixe de laser que é
+direcionado por meio de um espelho e a partir da mudança de fase do sinal
+refletido é possível calcular a distância até o objeto atingido.
+
+%TODO exemplos dos sensores de 3D scanners
+%TODO Pros e cons
+
+\subsubsection{ToF Cameras}
+
+As conhecidas como Time-of-Flight são dispositivos compostos por apenas uma
+câmera, não necessitando de uma configuração stereo para triangularização de
+imagens. Esse tipo de dispositivo utiliza uma fonte infra-vermelho interna e de
+forma análoga aos dispositivos laser, calcula a distância a partir da diferença
+de fase do sinal refletido. Entretanto, essa tecnologia possibilita o cálculo
+simultâneo das distâncias de cada objeto na região iluminada pela fonte IR,
+mesmo que com resoluções limitadas.
+
+%TODO exemplos dos sensores de ToF
+
+Essa tecnologia tem como vantagem o tamanho relativamente compacto dos sensores,
+não precisa de calibração extrínseca e também não é muito sensivel a iluminação
+presente no ambiente, pois possui fonte de iluminação própria.
+
+%TODO Pros e cons
+
+\subsubsection{Câmeras de Luz Estruturada}
+
+Estes sensores constituem de uma fonte emissora de infra-vermelho e um receptor.
+Um padrão é projetado na cena a ser reconstruida e a partir da distorção desse
+padrão é possível o cálculo de distâncias. 
+
+%TODO exemplos dos sensores de luz estruturada
+%TODO Pros e cons
+
+%TODO ELAEL - decidir se abre uma subseção d eaplicações ou coloca um exemplo de
+% aplicação em cada componente - utilizar o seu material do SOTA em 3D sensors. 
+
+
