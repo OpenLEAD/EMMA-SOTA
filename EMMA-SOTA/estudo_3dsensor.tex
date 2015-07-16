@@ -3,21 +3,21 @@
 O processo de metalização utilizado atualmente considera que a posição e
 orientação da pá é fixa em relação ao robô e, uma vez, que corretamente
 posiciona, o processo é executado em malha aberta. Entretanto, para qualquer uma
-das soluções propostas por esse documento, não é possível assumir que a pose
-do manipulador em relação a pá a ser processada se mantém fixa, tanto em posição,
- quanto em orientação.
+das soluções propostas por esse documento, não é possível assumir que nem a
+posição nem a orientação do manipulador, em relação a pá a ser processada, se
+manterão fixas.
 
 Para um correto planejamento de trajetória que o manipulador deve seguir durante
 a tarefa de metalização, é importante o conhecimento da transformada entre o
 sistema de coordenada do manipulador e da pá a ser processada. Portanto, é
-necessário a utilização de algum sistema que possibilite a aquisição de dados
-que fornecam informações a respeito do ambiente e a posição relativa entre o
-manipulador e as pás.
+necessário utilizar algum sistema que possibilite a aquisição de informações a
+respeito do ambiente e da posição relativa entre o manipulador e as pás.
 
 A utilização de um sensor de aquisição de dados espaciais não se limita somente
-a localização das partes constituintes do processo e, dependendo do sistema a
-ser escolhido, pode também ser útil na reconstrução do modelo do perfil
-hidráulico da pá, o perfil ideal e o estado atual da pá a ser processada.
+a localização, mas, dependendo do sistema a ser escolhido, pode também ser útil
+na reconstrução do modelo do perfil hidráulico da pá, tanto do perfil ideal
+quanto do estado atual da pá a ser processada (Tarefas descritas em
+\ref{desc_taref}).
 
 Esta seção irá apresentar os segmentos de sensores capazes de suprir essa
 necessidade, assim como suas vantagens e limitações. 
@@ -44,6 +44,8 @@ refletido é possível calcular a distância até o objeto atingido.
   \item Vida da bateria: 4,5 horas
   \item Temperatura ambiente: $5^o$ - $40^o$ C
 \end{itemize}
+%TODO LEMBERAR QUE EXISTE LASER TRIANGULATION TAMBÉM!
+
 
 %TODO exemplos dos sensores de 3D scanners
 %TODO Pros e cons
