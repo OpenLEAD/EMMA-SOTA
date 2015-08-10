@@ -1,8 +1,4 @@
 \subsection{Acesso pela escotilha inferior}
-%TODO Elael: prós e contras do acesso, soluções: manipuladores
-% industriais, manipuladores customizados, trilhos. Incluir figuras do
-% posicionamento das pás e cálculos do tamanho mínimo do manipulador
-
 Essa escotilha localizada no topo do aro câmara possui uma abertura de apenas
 35 cm de diâmetro, o que cria um desafio quando se pensa em utiliza-la como
 ponto de acesso para um robô. Por outro lado sua proximidade às pás e a área livre fora do aro
@@ -11,7 +7,7 @@ câmara criam possibilidades interessantes para seu uso.
 \textbf{Vantagens}
 \begin{itemize}
   \item Estabilidade da fixação do robô
-  \item Ponto de referência
+  \item Ponto de referência, facilitando sistemas de localização, mapeamento, controle e calibração
   \item Pórtico rolante para posicionar o robô na escotilha
 \end{itemize}
 
@@ -19,18 +15,17 @@ câmara criam possibilidades interessantes para seu uso.
 \begin{itemize}
   \item Dificuldade de encontrar robôs de tal dimensão (35 cm diâmetro)
   \item Necessidade de retirar e inserir o robô quando rodar as pás
-  \item Solução focada na UHE Jirau
+  \item Solução não geral, específica para UHE Jirau
 \end{itemize}
 
 A solução mais simples para este acessso é a utilização de um robô industrial
-comercial. A escolha está primariamente associada ao alcance do robô, e o
-alcance, por sua vez, à posição do robô com relação à pá. Por outro lado, apenas
+comercial. A escolha do robô está primariamente associada ao seu alcance. Por outro lado, apenas
 uma pequena parcela dos robôs comerciais possuem a dimensão necessária para
 atravessar a escotilha. Sendo assim, o estudo foi direcionada para o uso do
 KUKA Light Weight (LBR iiwa 14 R820), robô cuja diagonal da base é inferior aos
 35 cm da escotilha.
 
-O LBR R820 pesa 30 kg, possui 7 eixos e suporta um \textit{payload} de 14kg,
+O LBR R820 pesa 30 kg, possui 7 eixos e suporta carga de 14kg,
 suficiente por uma pequena margem para carregar o equipamento de
 revestimento. Entretanto, são necessários estudos aprofundados para valida-lo,
 como os requisitos de velocidade e precisão quando percorrendo a trajetória
